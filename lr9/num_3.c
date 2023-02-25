@@ -17,6 +17,12 @@ struct value* sum(struct value* a, struct value* b) {
     return &c;
 }
 
+struct value* multiplication(struct value* a, struct value* b) {
+    struct value c;
+    c.m = a->m * b->m;
+    c.n = a->n*b->n;
+    return &c;
+}
 
 int main() {
     struct value a, b;
@@ -29,5 +35,9 @@ int main() {
     printf("Введите знаменатель второго числа");
     scanf("%d", &b.m);
     struct value* c = sum(&a, &b);
+    printf("Сложение: ");
+    print(c);
+    c = multiplication(&a, &b);
+    printf("Умножение: ");
     print(c);
 }
