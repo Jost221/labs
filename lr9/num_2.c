@@ -13,7 +13,7 @@ struct student
 
 int main(){
     int count = 0;
-    scanf("%d", count);
+    scanf("%d", &count);
     struct student* students = (struct student*)malloc(count * sizeof(struct student));
     for (size_t i = 0; i < count; i++)
     {
