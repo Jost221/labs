@@ -1,0 +1,15 @@
+char* concatenate(char* a, char* b, char* c, char* d, char* e){
+    char* f = (char*)malloc(strlen(a) + strlen(b) + strlen(c) + strlen(d) + strlen(e) + 1);
+    strcpy(f, a);
+    strcat(f, b);
+    strcat(f, c);
+    strcat(f, d);
+    strcat(f, e);
+    return c;
+}
+
+char* float_to_string(float f){
+    char* s = (char*)malloc(sizeof(char)*100);
+    sprintf(s, "%.2f", f);
+    return s;
+}
