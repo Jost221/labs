@@ -16,18 +16,20 @@ int main(){
     }
     fwrite(arr, sizeof(*arr), 20, fp);
     fclose(fp);
-    fp = fopen("./data.txt", "r");
-    if(fp == NULL){__n
+    fp = fopen("./data.txt", "rb");
+    if(fp == NULL){
         printf("Failed to open file file\n");
         return 1;
     }
     int buffer[256];
 
-    while(fread(buffer, 1, 20, fp)!=NULL)
+    while (fread(buffer, 1, 80, fp) > 0)
     {
-        for(int i=0; i<256; i++){
-            printf("%d", *(arr+i));
+        for (int i = 0; i < 20; i++)
+        {
+            printf("%d\t", buffer[i]);
         }
+        printf("\n");
     }
     fclose(fp);
 }
