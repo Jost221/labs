@@ -22,13 +22,13 @@ int main()
     }
 
     // Read and print the binary data in hex
-    while (fread(buffer, 1, 80, fp) > 0)
+    while (fread(buffer, 1, 20, fp) > 0)
     {
-        for (i = 0; i < 80; i++)
+        for (i = 0; i < 10; i++)
         {
-            printf("\x1b[1;36m%02X \x1b[0m", buffer[i]);
+            printf("\033[104m \033[97m%02X", buffer[i]);
         }
-        printf("\n");
+        printf("\n\033[49m");
     }
 
     fclose(fp);
